@@ -10,12 +10,12 @@ app.get('/', (req, res) => {
 });
 
 app.post("/signin", (req, res) => {
-  res.send("Hello World!");
+  res.json({
+    userId: 1,
+  });
 });
 
 app.post("/signup", (req, res) => {
-  res.send("Hello World!");
-
   const userId = 1;
   const token = jwt.sign({ 
     userId 
@@ -29,7 +29,9 @@ app.post("/signup", (req, res) => {
 
 app.post("/room", middleware, (req, res) => {
   //db call
-  res.send("Hello World!");
+  res.json({
+    roomId: "123",
+  });
 });
 
 app.listen(3001, () => {
